@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static "css/mystyle.css" %}">
+    <title></title>
+  </head>
+  <body>
+    <h1> Hi This the model table</h1>
+      <h2>AccessRecord</h2>
+      {% if access_record %}
+        <table>
+          <th>Site Name</th>
+          <th>Date Accessed</th>
+          {% for acc in access_record %}
+          <tr>
+            <td>{{ acc.name }}</td>
+            <td>{{ acc.date }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      {% else %}
+      <p> No AccessRecord at the moment</p>
+      {% endif %}
+  </body>
+</html>
