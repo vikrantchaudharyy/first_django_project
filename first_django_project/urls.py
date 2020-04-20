@@ -24,11 +24,13 @@ from basic_app import views as b_view
 urlpatterns = [
     path('first_app/', include('first_app.urls')),
     path('basic_app/', include('basic_app.urls')),
-    path('', views.base),
     path('template_text/', views.template_text_render),
     path('template_image/', views.template_image_injection),
     path('strong/', views.strong),
     path('hello/',views.hello,name='hello'),
     path('table/', views.table),
     path('admin/', admin.site.urls),
+    path('',b_view.index,name='index'),
+    path('special/',b_view.special,name='special'),
+    path('logout/', b_view.user_logout, name='logout'),
 ]
